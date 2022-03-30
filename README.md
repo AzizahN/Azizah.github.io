@@ -1,2 +1,2 @@
 # Calculator
-claculator web app for individual project of Digitalent Front End Developer
+calculator web app for individual project of Digitalent Front End Developer
