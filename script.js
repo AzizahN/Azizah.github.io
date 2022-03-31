@@ -78,8 +78,12 @@ const calculate = () => {
     default:
       return;
   }
+  if (result === 0) {
+    result = "0";
+  }
   currentNumber = result;
   calculationOperator = "";
+  
 };
 
 // AC button
