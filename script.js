@@ -125,9 +125,29 @@ decimal.addEventListener("click", (event) => {
 });
 
 // input decimal function
-inputDecimal = (dot) => {
+const inputDecimal = (dot) => {
   if (currentNumber.includes(".")) {
     return;
   }
   currentNumber += dot;
 };
+
+// calculate percentage
+const percentage = document.querySelector(".percentage");
+
+percentage.addEventListener("click", (event) => {
+  inputPercent(event.target.value);
+  updateScreen(currentNumber);
+});
+
+// input percentage function
+inputPercent = () => {
+  if (currentNumber.includes("%")) {
+    return;
+  }
+  if (currentNumber === "0") {
+    return 0;
+  }
+  currentNumber = currentNumber/100 ;
+}
+
