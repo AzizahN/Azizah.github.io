@@ -107,9 +107,13 @@ clearBtn.addEventListener("click", () => {
 
 // clear function
 const clear = () => {
+  if (currentNumber === "0") {
+    currentNumber === "0";
+  } else {
+    currentNumber = currentNumber.substring(0, currentNumber.length - 1);
+  }
   prevNumber = prevNumber;
   calculationOperator = calculationOperator;
-  currentNumber = currentNumber.substring(0, currentNumber.length - 1);
 };
 
 // calculate decimal
