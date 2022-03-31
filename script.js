@@ -61,7 +61,7 @@ const calculate = () => {
     case "+":
       result = parseFloat(prevNumber) + parseFloat(currentNumber);
       break;
-    case "=":
+    case "-":
       result = parseFloat(prevNumber) - parseFloat(currentNumber);
       break;
     case "*":
@@ -78,9 +78,9 @@ const calculate = () => {
 };
 
 // AC button
-const clearBtn = document.querySelector(".all-clear");
+const allClearBtn = document.querySelector(".all-clear");
 
-clearBtn.addEventListener("click", () => {
+allClearBtn.addEventListener("click", () => {
   clearAll();
   updateScreen(currentNumber);
 });
@@ -90,6 +90,21 @@ const clearAll = () => {
   prevNumber = "";
   calculationOperator = "";
   currentNumber = "0";
+};
+
+// clear button
+const clearBtn = document.querySelector(".clear");
+
+clearBtn.addEventListener("click", () => {
+  clear();
+  updateScreen(currentNumber);
+});
+
+// clear function
+const clear = () => {
+  prevNumber = prevNumber;
+  calculationOperator = calculationOperator;
+  currentNumber = currentNumber.substring(0, currentNumber.length - 1);
 };
 
 // calculate decimal
