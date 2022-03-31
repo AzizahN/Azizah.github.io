@@ -1,8 +1,12 @@
 // the screen shows number
 const calculatorScreen = document.querySelector(".calculator-screen");
 
-const updateScreen = (number) => {
-  calculatorScreen.value = number;
+const updateScreen = (number, operator) => {
+  if (number) {
+    calculatorScreen.value = number;
+  } else {
+    calculatorScreen.value = operator;
+  }
 };
 
 const numbers = document.querySelectorAll(".number");
@@ -44,6 +48,7 @@ const inputOperator = (operator) => {
   }
   calculationOperator = operator;
   currentNumber = "0";
+  updateScreen(operator);
 };
 
 // calculate
